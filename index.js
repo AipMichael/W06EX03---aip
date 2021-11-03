@@ -1,3 +1,5 @@
+const chalk = require("chalk");
+
 const numbers = process.argv.slice(2);
 const firstNumber = numbers[0];
 const secondNumber = numbers[1];
@@ -15,10 +17,13 @@ const calculator = (firstNumber, secondNumber) => {
   const divided = division(firstNumber, secondNumber);
 
   console.log(
-    `${firstNumber}+${secondNumber} = ${added}, 
-    ${firstNumber}-${secondNumber} = ${substracted}, 
-    ${firstNumber}*${secondNumber} = ${multiplied}, 
-    ${firstNumber}/${secondNumber} = ${divided}`
+    chalk.blue(
+      `Resultados: 
+    ${firstNumber}+${secondNumber} = ${chalk.magenta(added)}, 
+    ${firstNumber}-${secondNumber} = ${chalk.yellow(substracted)}, 
+    ${firstNumber}*${secondNumber} = ${chalk.red(multiplied)}, 
+    ${firstNumber}/${secondNumber} = ${chalk.green(divided)}`
+    )
   );
 };
 
